@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bai 1-->
+<script>
+    let n=+prompt('Nhap so luong phan tu mang')
+    let arr=[];
+    let sumc=0,suml=0;
+    for(let i=0; i<n; i++){
+        let elen=+prompt(`Nhap gia tri phan tu${i}`)
+        arr.push(elen)
+        if(arr[i]%2===0){
+            sumc+=arr[i]
+        }
+        else{
+            suml+=arr[i]
+        }
+    }
+    document.write(`tong so chan-tong so le ${sumc-suml}`);
+
+</script>
+</body>
+</html>

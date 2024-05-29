@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(code, name, manufacturer, price) {
+            this._code = code;
+            this._name = name;
+            this._manufacturer = manufacturer;
+            this._price = price;
+        }
+
+        // Getter và setter cho thuộc tính mã điện thoại
+        get code() {
+            return this._code;
+        }
+        set code(newCode) {
+            this._code = newCode;
+        }
+
+        // Getter và setter cho thuộc tính tên điện thoại
+        get name() {
+            return this._name;
+        }
+        set name(newName) {
+            this._name = newName;
+        }
+
+        // Getter và setter cho thuộc tính hãng sản xuất
+        get manufacturer() {
+            return this._manufacturer;
+        }
+        set manufacturer(newManufacturer) {
+            this._manufacturer = newManufacturer;
+        }
+
+        // Getter và setter cho thuộc tính giá điện thoại
+        get price() {
+            return this._price;
+        }
+        set price(newPrice) {
+            this._price = newPrice;
+        }
+
+        // Phương thức toString() để lấy thông tin của điện thoại
+        toString() {
+            return `${this._name} - ${this._manufacturer} - Giá: ${this._price} VNĐ`;
+        }
+    }
+
+    class PhoneManager {
+        constructor() {
+            this._phones = [];
+        }
+
+        // Phương thức thêm mới điện thoại
+        addPhone(phone) {
+            this._phones.push(phone);
+        }
+
+        // Phương thức hiển thị danh sách điện thoại được sắp xếp tăng dần theo tên
+        showSortedPhones() {
+            const sortedPhones = this._phones.slice().sort((a, b) => a.name.localeCompare(b.name));
+            console.log("Danh sách điện thoại được sắp xếp tăng dần theo tên:");
+            sortedPhones.forEach(phone => {
+                console.log(phone.toString());
+            });
+        }
+    }
+
+    // Sử dụng chương trình quản lý điện thoại
+    const phoneManager = new PhoneManager();
+
+    // Thêm mới điện thoại
+    phoneManager.addPhone(new Phone("P01", "iPhone 12", "Apple", 25000000));
+    phoneManager.addPhone(new Phone("P02", "Galaxy S21", "Samsung", 22000000));
+    phoneManager.addPhone(new Phone("P03", "OnePlus 9 Pro", "OnePlus", 18000000));
+    phoneManager.addPhone(new Phone("P04", "Mi 11", "Xiaomi", 15000000));
+
+    // Hiển thị danh sách điện thoại được sắp xếp tăng dần theo tên
+    phoneManager.showSortedPhones();
+
+</script>
+</body>
+</html>

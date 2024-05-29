@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function string(arr) {
+        let count = 0
+        for (let i = 0; i < arr.length; i++) {
+            let char = arr[i]
+            if (char === char.toUpperCase() && char !== char.toLowerCase()) {
+                count++;
+            }
+        }
+        if (count !== 0){
+            return count;
+    }
+        else {
+            document.write("The String is not contain upper char")
+        }
+    }
+    let str='ghjHJIU';
+   document.write(string(str))
+
+
+</script>
+</body>
+</html>
